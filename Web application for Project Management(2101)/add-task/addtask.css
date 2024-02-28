@@ -1,0 +1,87 @@
+#ui{
+    background-color: white;
+    padding: 30px;
+    margin-top: 10px;
+    border-radius: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    height: 550px;
+}
+
+#sprintBoard {
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+#previousBtn {
+    margin-top: 23px;
+}
+
+.titles{
+    text-align: center;
+    padding-top: 30px;
+}
+
+.drop-zone {
+    position: relative;
+    width: 100%; 
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.col-sm-8 {
+    color: black;
+    font-size: 24px;
+    padding-bottom: 20px;
+    padding-top: 18px;  
+}
+
+.col-sm-8:nth-child(2n+1) {
+    background: #aecfce;
+}
+
+.col-sm-8:nth-child(2n+2) {
+    background: whitesmoke;
+}
+
+#startSprintBtn{
+    margin-top: 15px;
+    margin-right: 50px;
+}
+
+.taskName {
+    font-size: large;
+    word-break: break-word;
+}
+
+.taskStatus{
+    font-size: medium;
+}
+
+.taskCards{
+    background-color: #ebebeb;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    width: 90%;
+    cursor: grab;
+}
+
+.circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+}
+
+.red {
+    background: rgb(211, 108, 108);
+}
+
+.yellow{
+    background: rgb(255, 255, 146);
+}
+
+.green{
+    background: rgb(124, 198, 124);
+}

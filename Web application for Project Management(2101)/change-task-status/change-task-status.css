@@ -1,0 +1,102 @@
+#ui{
+    background-color: #ebebeb;
+    padding: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+
+.form-group label{
+    padding-top: 4px;
+}
+
+.custom-select{
+    border-radius: 5px;  
+    height: 40px;
+}
+
+input{
+    /* height: 40px; */
+    border-color: #000000;
+}
+
+.dropdown-toggle{
+    color: #000000;
+    background-color: #ffffff;
+    border-color: #000000;
+}
+
+.custom-select{
+    border-color: #000000;
+}
+
+.form-control{
+    border: 1px solid #000000;
+}
+
+#cancelbtn{
+    align-self: right;
+}
+
+.circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+}
+
+.red {
+    background: rgb(211, 108, 108);
+}
+
+.yellow{
+    background: rgb(255, 255, 146);
+}
+
+.green{
+    background: rgb(124, 198, 124);
+}
+
+#taskDescription{
+    /* background-color: #ffffff;
+    border-radius: 5px;
+    padding:5px; */
+    word-wrap: break-word;
+}
+
+.form-group label {
+    padding-top: 0px;
+}
+
+#previousBtn{
+    margin-top: 50px;
+}
+
+#taskName {
+    display: contents;
+    word-wrap: break-word;
+}
+
+#taskDescContainer{
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding:5px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.edit-form {
+    z-index: 1;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 700px;
+    background-color: #ebebeb;
+    padding: 30px;
+    margin-top: 70px;
+    border-radius: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}

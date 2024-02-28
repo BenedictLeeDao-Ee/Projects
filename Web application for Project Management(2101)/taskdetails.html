@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Task Details</title>
+        <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="./layout/layout.css">
+        <link href="./task-details/taskdetails.css" rel="stylesheet" type="text/css" media="all">
+    </head>
+
+    <body>
+    <div class="edit-form hidden absolute" id="form-display">
+        <form class="form-group" method="post" id="edit-form">
+            <fieldset>
+            <div class="row">
+                <div class="col-lg-auto">
+                <label for="taskName">
+                    <h4>Task Name:</h4>
+                </label>
+                </div>
+                <div class="col-lg">
+                <input type="text" name="_taskName" id="_taskName" class="form-control" placeholder="Enter task name">
+                </div>
+                <div class="col-lg-auto">
+                <label>Priority:</label>
+                </div>
+                <div class="col-lg-auto">
+                <select name="_priority" id="_priority" class="custom-select" required>
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                </select>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-auto">
+                <label>Tags:</label>
+                </div>
+                <div class="col-lg-auto">
+                <select name="_tags" id="_tags" class="selectpicker" multiple required>
+                    <option>Testing</option>
+                    <option>Core</option>
+                    <option>UI</option>
+                </select>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-lg-auto">
+                    <label>Type:</label>
+                    </div>
+                    <div class="col-lg-auto">
+                    <select name="_type" id="_type" class="custom-select" required>
+                        <option>User Story</option>
+                        <option>Task</option>
+                        <option>Bug</option>
+                    </select>
+                    </div>
+                </div>
+                </div>
+                <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-lg-auto">
+                    <label>Due Date:</label>
+                    </div>
+                    <div class="col-lg-auto">
+                    <div class="input-group date" id="datepicker">
+                        <input type="date" class="form-control" name="_dueDate" id="_dueDate" required>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-lg-auto">
+                    <label>Story Points:</label>
+                    </div>
+                    <div class="col-lg-auto">
+                    <input type="number" id="_storyPoints" name="_storyPoints" class="form-control" min="1" max="15" required>
+                    </div>    
+                </div>
+                </div>
+                <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-lg-auto">
+                    <label>Status:</label>
+                    </div>
+                    <div class="col-lg-auto">
+                    <select name="_status" id="_status" class="custom-select" required>
+                        <option>Not Started</option>
+                        <option>In Progress</option>
+                        <option>Completed</option>
+                    </select>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-lg">
+                    <label>Task Description:</label>
+                    </div>
+                </div>
+                </div>
+                <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-lg-auto">
+                    <label>Assignees:</label>
+                    </div>
+                    <div class="col-lg-auto">
+                    <select name="_assignee" id="_assignee" class="custom-select" required>
+                        <option>Jane Mckewley</option>
+                        <option>Anders Nathan</option>
+                        <option>Lyndia Sylvia</option>
+                    </select>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <br>
+            <div class="col-lg">
+                <input type="text" name="_taskDesc" id="_taskDesc" class="form-control" id="taskDescription"
+                placeholder="Task Description" required>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-6">
+                <div class="col-lg-auto float-end">
+                    <div>
+                    <input class="btn btn-primary" type="button" onclick="removeVisible()" value="Cancel" />
+                    </div>
+                </div>
+                </div>
+                <div class="col-lg-6">
+                <div class="col-lg-auto">
+                    <div>
+                    <input type="submit" name="done" value="Done" onclick="handleSubmit()" class="btn btn-primary">
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="row">
+                <h5 style="color:red;"><span id="errorDate"></span></h5>
+            </div>
+            </fieldset>
+        </form>
+    </div>
+	<main>
+        
+        <div class="container" id = "container">
+            
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-9">
+                    <div id="previousBtn">
+                        <h4><a href="taskview.html" class="previous">&laquo; Back</a></h4>
+                    </div>
+                    <div id="ui">
+                        <form class="form-group">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="row">
+                                        <div class="col-lg-auto">
+                                            <label><h4>Task Name:</h4></label>
+                                        </div>
+                                        <div class="col-lg-auto">
+                                            <h4><span id="taskName"></span></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="row">
+                                        <div class="col-lg-auto">
+                                            <label>Priority:</label>
+                                        </div>
+                                        <div class="col-lg-auto">
+                                            <span id="priority"></span>
+                                        </div>
+                                        <div class="col-lg-auto">
+                                            <div class="circle"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <br>
+    
+                            <div class="row">
+                                <div class="col-lg-auto">
+                                    <label>Tags:</label>
+                                </div>
+                                <div class="col-lg-auto">
+                                    <span id="tags"></span>
+                                </div>
+                            </div>
+    
+                            <br>
+    
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="row">
+                                        <div class="col-lg-auto">
+                                            <label>Type:</label>
+                                        </div>
+                                        <div class="col-lg-auto">
+                                            <span id="type"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="row">
+                                        <div class="col-lg-auto">
+                                            <label>Due Date:</label>
+                                        </div>
+                                        <div class="col-lg-auto">
+                                            <span id="dueDate"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <br>
+    
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="row">
+                                        <div class="col-lg-auto">
+                                            <label>Story Points:</label>
+                                        </div>
+                                        <div class="col-lg-auto">
+                                            <span id="storyPoints"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="row">
+                                        <div class="col-lg-auto">
+                                            <label>Status:</label>
+                                        </div>
+                                        <div class="col-lg-auto">
+                                            <span id="Status"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <br>
+    
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="row">
+                                        <div class="col-lg">
+                                            <label>Task Description:</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="row">
+                                        <div class="col-lg-auto">
+                                            <label>Assignees:</label>
+                                        </div>
+                                        <div class="col-lg-auto">
+                                            <span id="Assignees"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <br>
+                            
+                            <div class="container" id="taskDescContainer">
+                                <span id="taskDescription"></span>
+                            </div>
+    
+                            <br>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="col-lg-auto float-end">
+                                        <div>
+                                            <input type="button" name="edit" value="  Edit  " class="btn btn-primary" onclick="addVisible()" >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="col-lg-auto">
+                                        <div>
+                                            <input type="button" name="delete" value="Delete" class="btn btn-primary" onclick="removeTask()">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+        </div>
+        
+
+    </main>
+    
+    <script src = "./constants.js"></script>
+    <script src = "./localstorage.js"></script>
+    <script src = "./main.js"></script>
+    <script src="./task-details/taskdetails.js"></script>
+    <script src="./layout/sidebar.js"></script>
+    <script src="./layout/header.js"></script>
+    <script src="./layout/app.js"></script>
+    <script src="./fill-members/fill-members.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
+    </body>
+</html>

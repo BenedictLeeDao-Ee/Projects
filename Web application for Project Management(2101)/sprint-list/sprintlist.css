@@ -1,0 +1,64 @@
+  .fab-container1 {
+    position: fixed;
+    top: 4rem;
+    right: 3.2rem;
+    z-index: 1;
+  }
+  
+  .fab-icon-holder {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    background-color: rgb(48, 135, 235);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .clickable{
+    cursor: pointer;
+  }
+
+  .icon1 {
+    color: black;
+    width: 30px;
+    height: 30px;
+  }
+
+  .card {
+    height: 155px;
+    width: 700px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 16px;
+    text-align: left;
+    background-color: #f1f1f1;
+    margin: 10px;
+    margin-left: 100px;
+  }
+
+  .orange {
+    background: rgb(255, 173, 85);
+  }
+  
+  .blue {
+    background: rgb(84, 146, 253);
+  }
+  
+  .green {
+    background: rgb(138, 220, 138);
+  }
+
+  .sprint-status {
+    margin: 10px;
+    width: 120px;
+    height: 40px;
+    color: white;
+    align-self: center;
+    text-align: center;
+    padding-top: 7px;
+  }
+
+  .dates {
+    padding-right: 30px;
+  }

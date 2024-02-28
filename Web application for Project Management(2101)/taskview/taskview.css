@@ -1,0 +1,161 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .main {
+    display: flex;
+    padding-left: 25px;
+    padding-right: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+
+  .fab-container1 {
+    position: fixed;
+    top: 4rem;
+    right: 3.2rem;
+    z-index: 1;
+  }
+
+  .fab-container2 {
+    position: fixed;
+    top: 4.2rem;
+    right: 7.5rem;
+    z-index: 1;
+  }
+
+  .fab-icon-holder {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    background-color: rgb(48, 135, 235);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .clickable{
+    cursor: pointer;
+  }
+
+
+  .icon1 {
+    color: black;
+    width: 30px;
+    height: 30px;
+  }
+
+  .icon2 {
+    color: black;
+    width: 45px;
+    height: 45px;
+  }
+
+  .card {
+    bottom: -1.5rem;
+    right: -2rem;
+    height: 200px;
+    width:350px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 16px;
+    text-align: left;
+    background-color: #f1f1f1;
+  }
+
+
+  .card-footer {
+    margin-top: auto;
+    text-align: left;
+    border: none;
+    background-color: #f1f1f1;
+    margin-left: -10px;
+  }
+
+
+  .badge{
+    text-align:left; 
+    color: black; 
+    width: auto;
+    background: grey;
+    position: relative;
+  }
+  
+  #circle1 {
+    width: 30px;
+    height: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    background: red;
+  }
+    
+  #circle2 {
+    width: 30px;
+    height: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    background: green;
+  }
+
+  #circle3 {
+    width: 30px;
+    height: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    background: yellow;
+  }
+
+  .storypoints{
+    text-align: left;
+    bottom: 1rem;
+  }
+
+  .fullclick{
+    display:flex;
+  }
+
+  .fullclick span {
+    position: relative;
+  }
+  
+  .fullclick a.main {
+    color:  #f1f1f1;
+    text-align: center;
+    display: block;
+    z-index: 1;
+  }
+
+  .fullclick span a.main::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+  }
+  
+  .btn{
+    position: fixed;
+    top: 4.2rem;
+    right: 7.5rem;
+    z-index: 1;
+  }
+
+  
+  
+  /* Responsive columns - one column layout (vertical) on small screens */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
