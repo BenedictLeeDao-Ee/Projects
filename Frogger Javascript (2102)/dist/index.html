@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>FIT2102 A1 2022</title>
+  <script defer src="main.js"></script></head>
+  <body>
+    <h1>Frogger</h1>
+    <svg id="svgCanvas" width="600" height="600">
+        <image id="background" width = "600" height= "600" href = "../src/images/bg.png" ></image>
+        <image href="../src/images/highscore.png" x="220" y="5"></image>
+        <text class="high-score" id="highscore" x="220" y="37" style="font-size:20px"></text>
+        <image href="../src/images/score.png" x="30" y="5"></image>
+        <text class="score" id="currentScore" x="30", y="37" style="font-size:20px" ></text>
+        <text class="lives" x="30" y="580" style="font-size:20px">lives:</text>  
+        <text class="numberOfLives" id="liveCount" x="80", y="580" style="font-size:20px" ></text> 
+        <!-- <image class="frogLives" x="80" y="560" href="../src/images/frog_0.png" width="30" height="30"></image> -->
+    </svg>
+   
+    <div id="controls">
+      <h2>Controls:</h2>
+      <table>
+          <tr><td>Move Left</td><td><div id="ArrowLeft" class="key">&#8678;</div></td></tr>
+          <tr><td>Move Right</td><td><div id="ArrowRight" class="key">&#8680;</div></td></tr>
+          <tr><td>Move Up</td><td><div id="ArrowUp" class="key">&#8679;</div></td></tr>
+          <tr><td>Move Down</td><td><div id="ArrowDown" class="key">&#8681;</div></td></tr>
+          <tr><td>Restart Game</td><td><div id="p" class="key">P</div></td></tr>
+      </table>
+    </div>
+  </body>
+</html>
